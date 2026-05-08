@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games Fair Control System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+    <h1 class="sr-only">Games fair control system — track players and scores across stations</h1>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('setup')">&#9881; Setup</button>
+      <button class="tab" onclick="showTab('staff')">&#127918; Staff control</button>
+      <button class="tab" onclick="showTab('scoreboard')">&#127942; Scoreboard</button>
+    </div>
+
+    <div id="tab-setup" class="panel active">
+      <div class="setup-grid">
+        <div class="card">
+          <h3>Players</h3>
+          <div class="row">
+            <input type="text" id="player-input" placeholder="Player name"
+              onkeydown="if(event.key==='Enter')addPlayer()" />
+            <button onclick="addPlayer()">+ Add</button>
+          </div>
+          <div class="tag-list" id="player-list"></div>
+        </div>
+        <div class="card">
+          <h3>Game stations</h3>
+          <div class="row">
+            <input type="text" id="station-input" placeholder="Station name"
+              onkeydown="if(event.key==='Enter')addStation()" />
+            <button onclick="addStation()">+ Add</button>
+          </div>
+          <div class="tag-list" id="station-list"></div>
+        </div>
+      </div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <button onclick="showTab('staff')" class="primary-btn">Go to staff control &rarr;</button>
+        <button class="reset-btn" onclick="resetAll()">&#128465; Reset everything</button>
+      </div>
+    </div>
+
+    <div id="tab-staff" class="panel">
+      <div class="section-label">Select your station</div>
+      <div class="station-selector" id="station-selector"></div>
+      <div id="match-area"></div>
+    </div>
+
+    <div id="tab-scoreboard" class="panel">
+      <div class="stats-row" id="stats-row"></div>
+      <div class="card">
+        <table class="scoreboard">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Player</th>
+              <th>Wins</th>
+              <th>Stations visited</th>
+            </tr>
+          </thead>
+          <tbody id="scoreboard-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
