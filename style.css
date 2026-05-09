@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,21 +13,21 @@
   --text: #1a1a1a;
   --text-secondary: #6b6b68;
   --text-tertiary: #a0a09c;
-  --border: rgba(0,0,0,0.12);
-  --border-strong: rgba(0,0,0,0.25);
+  --border: rgba(0, 0, 0, 0.12);
+  --border-strong: rgba(0, 0, 0, 0.25);
   --radius-md: 8px;
   --radius-lg: 12px;
   --green: #1D9E75;
   --green-bg: #E1F5EE;
   --green-text: #085041;
-  --green-border: rgba(29,158,117,0.3);
+  --green-border: rgba(29, 158, 117, 0.3);
   --red: #E24B4A;
   --red-bg: #FCEBEB;
   --red-text: #501313;
-  --red-border: rgba(226,75,74,0.3);
+  --red-border: rgba(226, 75, 74, 0.3);
   --blue-bg: #E6F1FB;
   --blue-text: #0C447C;
-  --blue-border: rgba(55,138,221,0.35);
+  --blue-border: rgba(55, 138, 221, 0.35);
   --gold: #BA7517;
   --silver: #888780;
   --bronze: #854F0B;
@@ -39,17 +41,17 @@
     --text: #f0eeea;
     --text-secondary: #a0a09c;
     --text-tertiary: #6b6b68;
-    --border: rgba(255,255,255,0.1);
-    --border-strong: rgba(255,255,255,0.2);
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.2);
     --green-bg: #04342C;
     --green-text: #9FE1CB;
-    --green-border: rgba(29,158,117,0.3);
+    --green-border: rgba(29, 158, 117, 0.3);
     --red-bg: #501313;
     --red-text: #F7C1C1;
-    --red-border: rgba(226,75,74,0.3);
+    --red-border: rgba(226, 75, 74, 0.3);
     --blue-bg: #042C53;
     --blue-text: #B5D4F4;
-    --blue-border: rgba(55,138,221,0.25);
+    --blue-border: rgba(55, 138, 221, 0.25);
   }
 }
 
@@ -68,7 +70,7 @@ body {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   white-space: nowrap;
 }
 
@@ -107,8 +109,13 @@ body {
 }
 
 /* Panels */
-.panel { display: none; }
-.panel.active { display: block; }
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
 
 /* Cards */
 .card {
@@ -134,7 +141,9 @@ body {
 }
 
 @media (max-width: 520px) {
-  .setup-grid { grid-template-columns: 1fr; }
+  .setup-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .row {
@@ -143,7 +152,9 @@ body {
   margin-bottom: 8px;
 }
 
-.row input { flex: 1; }
+.row input {
+  flex: 1;
+}
 
 /* Inputs & buttons */
 input[type="text"] {
@@ -174,8 +185,13 @@ button {
   white-space: nowrap;
 }
 
-button:hover { background: var(--bg-secondary); }
-button:active { transform: scale(0.98); }
+button:hover {
+  background: var(--bg-secondary);
+}
+
+button:active {
+  transform: scale(0.98);
+}
 
 .primary-btn {
   font-weight: 500;
@@ -188,7 +204,9 @@ button:active { transform: scale(0.98); }
   background: transparent;
 }
 
-.reset-btn:hover { background: var(--red-bg); }
+.reset-btn:hover {
+  background: var(--red-bg);
+}
 
 /* Tags */
 .tag-list {
@@ -220,7 +238,9 @@ button:active { transform: scale(0.98); }
   padding: 0;
 }
 
-.tag button:hover { color: var(--red); }
+.tag button:hover {
+  color: var(--red);
+}
 
 .empty-msg {
   color: var(--text-tertiary);
@@ -259,7 +279,9 @@ button:active { transform: scale(0.98); }
   border-color: var(--blue-border);
 }
 
-.station-btn:hover:not(.active) { background: var(--bg-secondary); }
+.station-btn:hover:not(.active) {
+  background: var(--bg-secondary);
+}
 
 /* Match area */
 .match-area {
@@ -284,12 +306,24 @@ button:active { transform: scale(0.98); }
   border-bottom: 0.5px solid var(--border);
 }
 
-.player-row:last-child { border-bottom: none; }
+.player-row:last-child {
+  border-bottom: none;
+}
 
-.player-name { flex: 1; font-size: 14px; }
-.player-name.visited { color: var(--text-tertiary); text-decoration: line-through; }
+.player-name {
+  flex: 1;
+  font-size: 14px;
+}
 
-.result-btns { display: flex; gap: 6px; }
+.player-name.visited {
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+}
+
+.result-btns {
+  display: flex;
+  gap: 6px;
+}
 
 .win-btn {
   padding: 5px 14px;
@@ -313,7 +347,30 @@ button:active { transform: scale(0.98); }
   color: var(--red-text);
 }
 
-.win-btn:hover, .loss-btn:hover { opacity: 0.8; }
+.win-btn:hover,
+.loss-btn:hover {
+  opacity: 0.8;
+}
+
+.tick-btn {
+  padding: 5px 14px;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 0.5px solid var(--green-border);
+  background: var(--green-bg);
+  color: var(--green-text);
+}
+
+.tick-btn:hover {
+  opacity: 0.8;
+}
+
+.player-name.won {
+  color: var(--green-text);
+  font-weight: 500;
+}
 
 .win-badge {
   font-size: 12px;
@@ -343,7 +400,9 @@ button:active { transform: scale(0.98); }
   cursor: pointer;
 }
 
-.undo-btn:hover { background: var(--bg-secondary); }
+.undo-btn:hover {
+  background: var(--bg-secondary);
+}
 
 .no-station {
   color: var(--text-tertiary);
@@ -399,14 +458,33 @@ button:active { transform: scale(0.98); }
   border-bottom: 0.5px solid var(--border);
 }
 
-.scoreboard tr:last-child td { border-bottom: none; }
+.scoreboard tr:last-child td {
+  border-bottom: none;
+}
 
-.rank { font-weight: 500; color: var(--text-secondary); width: 32px; }
-.rank.gold { color: var(--gold); }
-.rank.silver { color: var(--silver); }
-.rank.bronze { color: var(--bronze); }
+.rank {
+  font-weight: 500;
+  color: var(--text-secondary);
+  width: 32px;
+}
 
-.wins-bar-wrap { display: flex; align-items: center; gap: 10px; }
+.rank.gold {
+  color: var(--gold);
+}
+
+.rank.silver {
+  color: var(--silver);
+}
+
+.rank.bronze {
+  color: var(--bronze);
+}
+
+.wins-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
 .wins-bar-bg {
   flex: 1;
@@ -424,9 +502,16 @@ button:active { transform: scale(0.98); }
   transition: width 0.4s;
 }
 
-.wins-count { font-size: 13px; font-weight: 500; min-width: 20px; }
+.wins-count {
+  font-size: 13px;
+  font-weight: 500;
+  min-width: 20px;
+}
 
-.progress-dots { display: flex; gap: 3px; }
+.progress-dots {
+  display: flex;
+  gap: 3px;
+}
 
 .dot {
   width: 8px;
@@ -436,8 +521,15 @@ button:active { transform: scale(0.98); }
   border: 0.5px solid var(--border-strong);
 }
 
-.dot.win { background: var(--green); border-color: var(--green); }
-.dot.loss { background: var(--red); border-color: var(--red); }
+.dot.win {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.dot.loss {
+  background: var(--red);
+  border-color: var(--red);
+}
 
 .stations-label {
   font-size: 12px;
