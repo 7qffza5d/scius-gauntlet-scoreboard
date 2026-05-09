@@ -13,12 +13,12 @@
     <h1 class="sr-only">Games fair control system — track players and scores across stations</h1>
 
     <div class="tabs">
-      <button class="tab active" onclick="showTab('setup')">&#9881; Setup</button>
+      <button class="tab active" onclick="showTab('scoreboard')">&#127942; Scoreboard</button>
       <button class="tab" onclick="showTab('staff')">&#127918; Staff control</button>
-      <button class="tab" onclick="showTab('scoreboard')">&#127942; Scoreboard</button>
+      <button class="tab" onclick="showTab('setup')">&#9881; Setup</button>
     </div>
 
-    <div id="tab-setup" class="panel active">
+    <div id="tab-setup" class="panel">
       <div class="setup-grid">
         <div class="card">
           <h3>Players</h3>
@@ -51,7 +51,7 @@
       <div id="match-area"></div>
     </div>
 
-    <div id="tab-scoreboard" class="panel">
+    <div id="tab-scoreboard" class="panel active">
       <div class="stats-row" id="stats-row"></div>
       <div class="card">
         <table class="scoreboard">
