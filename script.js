@@ -248,9 +248,19 @@ function renderScoreboard() {
     return;
   }
 
+  // Build rank array: same wins = same rank (dense ranking)
+  const ranks = [];
+  for (let i = 0; i < scores.length; i++) {
+    if (i === 0) ranks.push(1);
+    else if (scores[i].wins === scores[i - 1].wins) ranks.push(ranks[i - 1]);
+    else ranks.push(i + 1);
+  }
+
+
   tbody.innerHTML = scores.map((s, i) => {
-    const rankClass = i === 0 ? 'gold' : i === 1 ? 'silver' : i === 2 ? 'bronze' : '';
-    const rankSymbol = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i + 1}`;
+    const rank = ranks[i];
+    const rankClass = rank === 1 ? 'gold' : rank === 2 ? 'silver' : rank === 3 ? 'bronze' : '';
+    const rankSymbol = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `${rank}`;
     const dots = s.dots.map(won =>
       `<span class="dot${won ? ' win' : ''}" title="${won ? 'won' : 'not won'}"></span>`
     ).join('');
@@ -272,6 +282,7 @@ function renderScoreboard() {
       </td>
     </tr>`;
   }).join('');
+
 }
 
 // ─────────────────────────────────────────────
